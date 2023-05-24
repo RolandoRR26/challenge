@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+          <img class="logoHeader" src="Alura Challenge - Desafío 1 - Lógica/Logo.png">     
+    </header>  
+
+  <div class="contenedor">
+
+    <div class="encriptar">       
+        <input type="text" onkeypress="return validarEntrada(event)" id="texto" required placeholder="Ingrese el texto aqui" autocomplete="off">      
+    </div> 
+
+    <div id="div-desaparecer" class="superpuesto">
+        <img class="imagenDesaparecer"src="Alura Challenge - Desafío 1 - Lógica/Muñeco.png">
+        <p class="textoDesaparecer">Ningun Texto fue encontrado</p>
+        <p class="textoDesaparecer">Ingrese el texto que quiere encriptar o desencriptar</p>
+        
+    </div>
+
+    <div id="div-aparecer"> 
+        <p id="resultado"></p>
+        <button id="botonCopiar" onclick="copiarTexto()" style="visibility: hidden;">Copiar</button>
+    </div>
+  </div>
+  
+  <div class="botonesContenedor">
+    <button class="encriptarBoton" onclick="mostrarDivAparecer(); encriptar(); ">Encriptar</button>
+    <button class="desencriptarBoton" onclick="mostrarDivAparecer(); desencriptar(); ">Desencriptar</button>
+  </div>
+
+   
+    <script>
+        function validarEntrada(event) {
+          var codigoTecla = event.which || event.keyCode;
+    
+          if (codigoTecla >= 97 && codigoTecla <= 122) {
+            // Permitir letras minúsculas, en codigo tecla las letras minusculas donde el 97 al 122, asi  lo validamos
+            return true;
+          } else {
+            // Bloquear el resto de caracteres
+            event.preventDefault(); //esto funcinoa como un freno evita que se ejecute la accion en este caso de ingresar el caracter bloqueado
+            alert("No se pueden ingresar letras mayúsculas, números ni caracteres especiales.");
+            return false;
+          }
+        }
+      </script>
+        
+        <script>
+          function encriptar() {
+            var texto = document.getElementById("texto").value;
+            
+            var textoEncriptado = texto.replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
+            document.getElementById("resultado").textContent = textoEncriptado;
+          }
+      
+          function desencriptar() {
+            var textoEncriptado = document.getElementById("texto").value;
+            var textoDesencriptado = textoEncriptado.replace(/ufat/g, "u").replace(/ober/g, "o").replace(/ai/g, "a").replace(/imes/g, "i").replace(/enter/g, "e");
+            document.getElementById("resultado").textContent = textoDesencriptado;
+          }
+        </script>
+ 
+
+       <script>
+            function mostrarDivAparecer() {
+              // Obtener el valor del input
+              var inputValue = document.getElementById("texto").value;
+              var boton = document.getElementById("botonCopiar");
+              
+              if (inputValue === "") {
+                // Si el input está vacío, mostrar el div-desaparecer y ocultar el div-aparecer
+                document.getElementById("div-aparecer").style.display = "none";
+                document.getElementById("div-desaparecer").style.display = "block";
+                boton.style.visibility = "hidden";
+
+              } else {
+                // Si el input tiene contenido, mostrar el div-aparecer y actualizar la información
+                document.getElementById("div-aparecer").style.display = "block";
+                document.getElementById("resultado").innerText = inputValue;
+                document.getElementById("div-desaparecer").style.display = "none";
+                boton.style.visibility = "visible";
+
+                
+              }
+            }     
+                   
+      </script> 
+
+<script>
+  function copiarTexto() {
+    var resultado = document.getElementById("resultado").textContent;
+
+    // Crear un elemento de área de texto temporal
+    var elementoTemp = document.createElement("textarea");
+    elementoTemp.value = resultado;
+    document.body.appendChild(elementoTemp);
+
+    // Seleccionar el contenido del elemento temporal
+    elementoTemp.select();
+    elementoTemp.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+    // Copiar el contenido seleccionado al portapapeles
+    document.execCommand("copy");
+
+    // Eliminar el elemento temporal del DOM
+    document.body.removeChild(elementoTemp);
+
+    // Mostrar una notificación de copiado
+    alert("Texto copiado al portapapeles: " + resultado);
+  }
+</script>
+
+
+    <footer>
+        <p>Desarrollado por Rolando Rodriguez</p>
+        <p>https://github.com/RolandoRR26 GitHub</p>
+        <p>Twitter @RolasOficiaal</p>
+    </footer>
+</body>
+</html>

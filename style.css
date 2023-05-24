@@ -1,0 +1,138 @@
+body{
+    background-color: #CED4DA;
+}
+
+header{
+    margin-bottom: 80px;
+
+}
+
+  .contenedor {
+    display: flex;
+  }
+  
+  .encriptar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    
+  }
+ 
+  #texto{  
+    color: #ffffff;  
+    font-family: cascadia code;   
+    font-weight: bold; 
+    width: 300px;
+    height: 40px;
+    border: 10px;
+    font-size: 16px;
+    padding-left: 100px;
+    margin-left: 50px;
+    background-color: #072B61;
+    border-radius: 10px;
+    border-color: #356EA9;
+  }
+
+  #texto::placeholder{
+    color: #ffffff;
+    font-weight: bold; 
+    text-align:justify;
+
+  }
+  
+  #div-desaparecer {
+    text-align: center;
+    flex: 1;        
+    border: 5px solid #072B61;
+    border-radius: 10px;
+    background-color: #ffffff;
+    
+  }
+
+  .textoDesaparecer{
+    font-weight: bold;
+    font-family: cascadia code;
+    color: #072B61;
+    font-size: 19px;
+  }
+
+  #div-aparecer{
+    text-align: center;
+    flex: 1;       
+    height: 350px;
+    border: 5px solid #072B61;
+    border-radius: 10px;
+    background-color: #356EA9;
+    display: none;
+    font-family: cascadia code;
+    color: #072B61;
+    font-size: 19px;
+    background-color: #ffffff;    
+  }
+  
+  #botonCopiar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 20px;
+    background-color:  #0A3871;
+    color: #ffffff;
+    font-weight: bold;
+    border: 5px solid #072B61;
+    margin-top: 235px;
+  }
+
+  .imagenDesaparecer{
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+    width: 250px;
+    
+  } 
+
+  .botonesContenedor{
+    padding-left: 30px;
+    padding-bottom: 30px;
+    
+  }
+
+  .encriptarBoton{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 20px;
+    background-color:  #0A3871;
+    color: #ffffff;
+    font-weight: bold;
+    border: 5px solid #072B61;
+
+  }
+
+  .desencriptarBoton{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 20px;
+    background-color: #ADB5BD;
+    color: #0A3871;
+    font-weight: bold;
+    border: 5px solid #072B61;
+  }
+
+ footer{
+    padding: 60px;
+    background-color: #072B61;
+    text-align: center;
+    border-radius: 15px;
+    border: 5px solid  #356EA9;
+ }
+
+ footer p{
+    font-family: cascadia code;
+    color: #ffffff;
+    font-weight: bold;
+    
+ }
