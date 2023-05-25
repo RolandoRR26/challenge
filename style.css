@@ -1,3 +1,8 @@
+@media screen and (max-width: 768px) {
+  /* Estilos para dispositivos con ancho máximo de 768px */
+  /* Ajusta el diseño y la disposición de los elementos aquí */
+}
+
 body{
     background-color: #CED4DA;
 }
@@ -123,7 +128,7 @@ header{
   }
 
  footer{
-    padding: 60px;
+    padding: 30px;
     background-color: #072B61;
     text-align: center;
     border-radius: 15px;
